@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Felsefe Sokağı — 3D İnteraktif Felsefe Yolculuğu</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <canvas id="game-canvas"></canvas>
+
+    <!-- Yükleme & Başlangıç Menüsü -->
+    <div id="start-overlay" class="overlay active">
+      <div class="start-card">
+        <div class="badge">3D İnteraktif Felsefe Deneyimi</div>
+        <h1>Felsefe Sokağı</h1>
+        <p class="subtitle">
+          Sokrates, Platon, Aristoteles, Descartes ve Nietzsche'nin evlerini ziyaret et,
+          felsefi görevleri çöz, 5 anahtar parçasını topla ve Felsefe Tapınağı'nın kapısını aç.
+        </p>
+
+        <div id="loading-box" class="loading-box">
+          <div class="loading-bar-bg"><div id="loading-bar" class="loading-bar-fill"></div></div>
+          <span id="loading-text">Sahne hazırlanıyor...</span>
+        </div>
+
+        <div class="controls-grid">
+          <div class="control-item">
+            <strong>Bilgisayar</strong>
+            <span><code>W A S D</code> Yürü &bull; <code>Fare</code> Bak &bull; <code>E</code> Konuş / Etkileş &bull; <code>M</code> Harita</span>
+          </div>
+          <div class="control-item">
+            <strong>Telefon / Dokunmatik</strong>
+            <span>Sol Joystick: Yürü &bull; Sağ Ekran: Bak &bull; Ekrandaki <code>Konuş</code> düğmesi</span>
+          </div>
+        </div>
+
+        <div class="start-actions">
+          <button id="btn-start" class="btn-primary" disabled>Yükleniyor...</button>
+          <button id="btn-credits" class="btn-secondary">Hakkında &amp; Lisanslar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ortak Nişangah -->
+    <div id="crosshair" class="crosshair hidden"></div>
+
+    <!-- Üst HUD: Görev Listesi, Anahtar Parçaları ve Araçlar -->
+    <div id="hud" class="hud hidden">
+      <div class="hud-left">
+        <div class="panel-header">
+          <span>Anahtar Parçaları (<span id="keys-count">0</span>/5)</span>
+        </div>
+        <div id="keys-bar" class="keys-bar"></div>
+        <ul id="quest-list" class="quest-list"></ul>
+      </div>
+
+      <div class="hud-right">
+        <button id="btn-map" class="hud-btn" title="Harita (M)">🗺️ Harita</button>
+        <button id="btn-sound" class="hud-btn" title="Ses Aç/Kapa">🔊 Ses</button>
+        <button id="btn-menu" class="hud-btn" title="Menü">☰ Menü</button>
+      </div>
+    </div>
+
+    <!-- Etkileşim İstemi -->
+    <div id="interact-prompt" class="interact-prompt hidden">
+      <button id="btn-interact" class="btn-interact">
+        <span class="key-badge">E</span>
+        <span id="interact-label">Konuş</span>
+      </button>
+    </div>
+
+    <!-- Mobil Sanal Joystick ve Dokunmatik Bakış Alanı -->
+    <div id="mobile-controls" class="mobile-controls hidden">
+      <div id="joystick-zone" class="joystick-zone">
+        <div id="joystick-base" class="joystick-base">
+          <div id="joystick-knob" class="joystick-knob"></div>
+        </div>
+      </div>
+      <div id="look-zone" class="look-zone"></div>
+    </div>
+
+    <!-- Diyalog Kutusu -->
+    <div id="dialogue-box" class="dialogue-box hidden">
+      <div class="dialogue-header">
+        <span id="dialogue-speaker" class="speaker-name">Filozof</span>
+        <button id="btn-dialogue-close" class="btn-close">✕</button>
+      </div>
+      <p id="dialogue-text" class="dialogue-text"></p>
+      <div id="dialogue-options" class="dialogue-options"></div>
+    </div>
+
+    <!-- Görev Modalı (5 Filozof Görevi + Final) -->
+    <div id="quest-modal" class="overlay hidden">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h2 id="quest-modal-title">Görev</h2>
+          <button id="btn-quest-close" class="btn-close">✕</button>
+        </div>
+        <div id="quest-modal-body" class="modal-body"></div>
+      </div>
+    </div>
+
+    <!-- Küçük Harita Modalı (M tuşu) -->
+    <div id="map-modal" class="overlay hidden">
+      <div class="modal-card map-card">
+        <div class="modal-header">
+          <h2>Felsefe Sokağı Haritası</h2>
+          <button id="btn-map-close" class="btn-close">✕</button>
+        </div>
+        <canvas id="minimap-canvas" width="520" height="320"></canvas>
+        <p class="map-legend">Yeşil nokta: Konumun &bull; Altın: Tamamlanan ev &bull; Mor: Tapınak</p>
+      </div>
+    </div>
+
+    <!-- Hakkında & Lisans Modalı -->
+    <div id="credits-modal" class="overlay hidden">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h2>Hakkında &amp; Lisanslar</h2>
+          <button id="btn-credits-close" class="btn-close">✕</button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Felsefe Sokağı</strong> — Three.js ve Vite ile hazırlanmış interaktif 3D felsefe sergisi.</p>
+          <p><strong>CC0 1.0 Varlık Atıfları (3D Valley üzerinden):</strong></p>
+          <ul style="font-size:12px; color:#b5b2a8; padding-left:18px; line-height:1.5;">
+            <li>"Qwantani Sunset" — Greg Zaal, Jarod Guest, Poly Haven (CC0 1.0)</li>
+            <li>"Greek Temple" &amp; "Olive Tree" — 3D Valley (CC0 1.0)</li>
+            <li>"Street Lamp 01", "Painted Wooden Bench", "Marble Bust 01", "Wooden Table 01", "Painted Wooden Chair 01", "Wooden Bookshelf Worn", "Scandinavian Masonry Heater", "Vintage Oil Lamp", "Wall Clock", "Fancy Picture Frame 01", "Planter Pot Clay", "Cobblestone 02" — Poly Haven (CC0 1.0)</li>
+            <li>"Fountain Round Detail", "Stone Wall", "Cup Tea", "Key" — Kenney (CC0 1.0) &bull; "Book Set", "Bed Floor" — KayKit (CC0 1.0)</li>
+            <li>"Carpet 2", "Parchment", "Wizard", "Door Straight", "Candelabrum", "Cat", "28 Roll Dice" — Quaternius (CC0 1.0)</li>
+          </ul>
+          <p><strong>Filozoflar:</strong> Sokrates, Platon, Aristoteles, René Descartes, Friedrich Nietzsche ve İskenderiyeli Hypatia.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bildirim Toast -->
+    <div id="toast" class="toast hidden"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+{
+  "gorevler": [
+    {
+      "id": "sokrates",
+      "filozof": "Sokrates",
+      "anahtarAdi": "Bilgelik Anahtarı",
+      "ikon": "🦉",
+      "tur": "coktan_secmeli",
+      "sorular": [
+        {
+          "soru": "Sokrates'in felsefe yöntemi nedir?",
+          "secenekler": [
+            "Ders anlatmak",
+            "Soru sorarak düşündürmek",
+            "Kitap yazmak"
+          ],
+          "dogru": 1,
+          "ipucu": "Ben hiç kitap yazmadım, sadece konuştum."
+        },
+        {
+          "soru": "\"Kendini bil\" sözü hangi tapınağın girişinde yazılıdır?",
+          "secenekler": [
+            "Delphi",
+            "Olympia",
+            "Atina Akropolü"
+          ],
+          "dogru": 0,
+          "ipucu": "Kahinin bulunduğu tapınağı düşün."
+        },
+        {
+          "soru": "Sokrates'e göre bilgeliğin ilk adımı nedir?",
+          "secenekler": [
+            "Çok okumak",
+            "Zengin olmak",
+            "Bilmediğini bilmek"
+          ],
+          "dogru": 2,
+          "ipucu": "Başta söylediğim cümleyi hatırla."
+        }
+      ],
+      "odul": "bilgelik_anahtari"
+    },
+    {
+      "id": "platon",
+      "filozof": "Platon",
+      "anahtarAdi": "Hakikat Anahtarı",
+      "ikon": "🕯️",
+      "tur": "eslestirme",
+      "aciklama": "Duvardaki her gölgeyi sahnedeki gerçek nesneyle eşleştir:",
+      "ciftler": [
+        { "golgeId": "yuvarlak", "golge": "Yuvarlak gölge", "nesneId": "kure", "nesne": "Küre" },
+        { "golgeId": "ucgen", "golge": "Üçgen gölge", "nesneId": "piramit", "nesne": "Piramit" },
+        { "golgeId": "uzun", "golge": "Uzun ince gölge", "nesneId": "mum", "nesne": "Mum" },
+        { "golgeId": "kare", "golge": "Kare gölge", "nesneId": "kitap", "nesne": "Kitap" },
+        { "golgeId": "kus", "golge": "Kuş şeklinde gölge", "nesneId": "kus_figuru", "nesne": "Kuş figürü" }
+      ],
+      "tamamMesaji": "Gölgeler gerçeğin soluk kopyasıydı. Şimdi gerçeği gördün.",
+      "odul": "hakikat_anahtari"
+    },
+    {
+      "id": "aristoteles",
+      "filozof": "Aristoteles",
+      "anahtarAdi": "Bilim Anahtarı",
+      "ikon": "📚",
+      "tur": "siniflandirma",
+      "aciklama": "Dağınık 8 kitabı konularına göre doğru rafa (Mantık, Etik, Doğa) yerleştir:",
+      "raflar": ["Mantık", "Etik", "Doğa"],
+      "kitaplar": [
+        { "ad": "Kategoriler", "raf": "Mantık" },
+        { "ad": "Birinci Analitikler", "raf": "Mantık" },
+        { "ad": "Nikomakhos'a Etik", "raf": "Etik" },
+        { "ad": "Politika", "raf": "Etik" },
+        { "ad": "Eudemos Ahlakı", "raf": "Etik" },
+        { "ad": "Fizik", "raf": "Doğa" },
+        { "ad": "Hayvanların Bölümleri", "raf": "Doğa" },
+        { "ad": "Gökyüzü Üzerine", "raf": "Doğa" }
+      ],
+      "yanlisIpucu": "Bu kitabın konusuna bir daha bak.",
+      "odul": "bilim_anahtari"
+    },
+    {
+      "id": "descartes",
+      "filozof": "René Descartes",
+      "anahtarAdi": "Akıl Anahtarı",
+      "ikon": "🔥",
+      "tur": "cumle_ve_soru",
+      "aciklama": "Karışık kelimeleri doğru sıraya diz ve ardından şüphe sorularını yanıtla:",
+      "karisikKelimeler": ["varım", "öyleyse", "Düşünüyorum,"],
+      "dogruCumle": ["Düşünüyorum,", "öyleyse", "varım"],
+      "sorular": [
+        {
+          "soru": "Descartes neden her şeyden şüphe etmeye karar verdi?",
+          "secenekler": [
+            "Sıkıldığı için",
+            "Kesin bilgiye ulaşmak için",
+            "Okula gitmek istemediği için"
+          ],
+          "dogru": 1,
+          "ipucu": "Amaç şüphede kalmak değil, sarsılmaz bir temel bulmaktı."
+        },
+        {
+          "soru": "Her şeyden şüphe edilse de nereden şüphe edilemez?",
+          "secenekler": [
+            "Şüphe ettiğimizden",
+            "Havadan",
+            "Duyulardan"
+          ],
+          "dogru": 0,
+          "ipucu": "Şüphe etmenin kendisi bir düşünme eylemidir."
+        }
+      ],
+      "tamamMesaji": "Akıl, şüphenin içinden doğru yolu buldu.",
+      "odul": "akil_anahtari"
+    },
+    {
+      "id": "nietzsche",
+      "filozof": "Friedrich Nietzsche",
+      "anahtarAdi": "Cesaret Anahtarı",
+      "ikon": "⚡",
+      "tur": "not_sirala_ve_soru",
+      "aciklama": "Masadaki üç notu doğru mantıksal sırayla (Not 1 → Not 2 → Not 3) dizip oku, ardından soruyu yanıtla:",
+      "notlar": [
+        { "id": 1, "etiket": "Not 1", "metin": "Eski değerlere olan inanç insanların hayatından çekiliyor." },
+        { "id": 2, "etiket": "Not 2", "metin": "Bu boşluk korkutucu olabilir, çünkü anlam artık hazır verilmiyor." },
+        { "id": 3, "etiket": "Not 3", "metin": "Çözüm, kendi değerlerini yaratmak ve kendini aşmaya cesaret etmektir." }
+      ],
+      "soru": {
+        "soru": "\"Tanrı öldü\" sözü ne anlama gelir?",
+        "secenekler": [
+          "Nietzsche ölüm sevinciyle konuşuyordu",
+          "Modern çağda eski dini ve ahlaki değerlerin gücünü yitirmesi",
+          "Nietzsche dinsiz biriydi, hepsi bu"
+        ],
+        "dogru": 1,
+        "ipucu": "Notları tekrar oku. Cümle bir kutlama değil, bir tespit."
+      },
+      "odul": "cesaret_anahtari"
+    }
+  ]
+}

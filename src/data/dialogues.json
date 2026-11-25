@@ -1,0 +1,93 @@
+{
+  "sokrates": {
+    "name": "Sokrates",
+    "title": "Sokrates (1. Ev)",
+    "open": "Hoş geldin yabancı. Ben bir şey bilmediğimi bilen adamım. Sen ne biliyorsun?",
+    "options1": [
+      { "label": "Çok şey bilirim.", "reply": "Öyle mi? O zaman sana bir soru soracağım. Çoğu zaman bildiğini sanan, aslında sormayı unutmuş olur." },
+      { "label": "Ben de pek bir şey bilmem.", "reply": "İşte bilgeliğin başlangıcı bu. Bilmediğini kabul etmek, öğrenmenin kapısıdır." }
+    ],
+    "common": "Ben insanlara cevap vermem, soru sorarım. Sorular, insanın içindeki doğruyu ortaya çıkarır. Buna doğurtma sanatı derler, çünkü annem ebeydi, ben de düşünceleri doğurtmaya çalışırım.",
+    "questOffer": "Sana üç soru soracağım. Doğru cevapları bulursan sana bilgelik anahtarının bir parçasını veririm.",
+    "afterQuest": "Aferin. Gördün mü, cevabı bilmek değil, doğru soruyu sormak seni bilge yapar. Bu anahtar parçası senin."
+  },
+  "platon": {
+    "name": "Platon",
+    "title": "Platon (2. Ev)",
+    "open": "Gölgelere bakma dostum. Gerçek olan, gördüğün şeylerin ardındadır. Odama hoş geldin.",
+    "options1": [
+      { "label": "Gölgeler mi?", "reply": "Hayal et, bir mağarada doğdun ve duvara vuran gölgelerden başka hiçbir şey görmedin. Sana göre gölgeler gerçektir. Bir gün biri seni dışarı çıkarır ve güneşi gösterir. İşte felsefe, o mağaradan çıkma yolculuğudur." },
+      { "label": "Gerçek nedir?", "reply": "Hayal et, bir mağarada doğdun ve duvara vuran gölgelerden başka hiçbir şey görmedin. Sana göre gölgeler gerçektir. Bir gün biri seni dışarı çıkarır ve güneşi gösterir. İşte felsefe, o mağaradan çıkma yolculuğudur." }
+    ],
+    "options2": [
+      { "label": "Peki ben mağarada mıyım?", "reply": "Alışkanlıklarımız, duyduklarımız, herkesin söylediği şeyler hep gölgedir. Dışarı çıkmak alışkın olduğun rahatlığı bırakmaktır, bu yüzden zordur. Ama hakikat orada bekler." },
+      { "label": "Dışarısı neden korkutucu?", "reply": "Alışkanlıklarımız, duyduklarımız, herkesin söylediği şeyler hep gölgedir. Dışarı çıkmak alışkın olduğun rahatlığı bırakmaktır, bu yüzden zordur. Ama hakikat orada bekler." }
+    ],
+    "questOffer": "Duvardaki gölgelere bak ve her gölgenin hangi gerçek nesneye ait olduğunu bul. Doğru eşleştirirsen hakikat anahtarının parçasını alırsın.",
+    "afterQuest": "Gölgenin ardındaki gerçeği gördün. Mağaradan bir adım çıktın. Bu parça artık senin."
+  },
+  "aristoteles": {
+    "name": "Aristoteles",
+    "title": "Aristoteles (3. Ev)",
+    "open": "Düzen, bilginin anasıdır. Hoş geldin, kitaplarımın arasında yürürken dikkat et.",
+    "options1": [
+      { "label": "Neden bu kadar kitap var?", "reply": "Ben her şeyi gözlemlerim ve sınıflandırırım. Hayvanları, bitkileri, devletleri, insanın davranışlarını. Çünkü bir şeyi anlamak, onun neye benzediğini ve neden var olduğunu bulmaktır." },
+      { "label": "Sen neyle uğraşırsın?", "reply": "Ben her şeyi gözlemlerim ve sınıflandırırım. Hayvanları, bitkileri, devletleri, insanın davranışlarını. Çünkü bir şeyi anlamak, onun neye benzediğini ve neden var olduğunu bulmaktır." }
+    ],
+    "options2": [
+      { "label": "Mutluluk nedir?", "reply": "Mutluluk bir an değil, erdemle yaşanmış bir hayattır. Cesaret, adalet, ölçülülük gibi erdemler orta yolu bulmaktır. Fazlası da azı da zarar verir." },
+      { "label": "Doğru düşünmek nasıl olur?", "reply": "Doğru düşünmek, öncüllerden sonuca düzgün yürümektir. Bütün insanlar ölümlüdür, Sokrates insandır, öyleyse Sokrates ölümlüdür. Bu mantığın ilk örneğidir." }
+    ],
+    "questOffer": "Dağınık kitaplarım yerlerinden çıkmış. Her kitabı doğru rafa koy: mantık, etik ya da doğa. Bitirirsen bilim anahtarının parçasını alırsın.",
+    "afterQuest": "Düzen kurdun. İşte bilimin ilk adımı. Bu anahtar parçası senin."
+  },
+  "descartes": {
+    "name": "René Descartes",
+    "title": "Descartes (4. Ev)",
+    "open": "Şöminenin yanına otur. Ben her şeyden şüphe ederek başladım, belki sen de edersin.",
+    "options1": [
+      { "label": "Her şeyden mi?", "reply": "Duyularım beni aldatabilir. Rüya görürken de her şey gerçek gibi görünür. Bu yüzden kesin bilgiyi bulana kadar her şeyden şüphe etmeye karar verdim." },
+      { "label": "Neden şüphe?", "reply": "Duyularım beni aldatabilir. Rüya görürken de her şey gerçek gibi görünür. Bu yüzden kesin bilgiyi bulana kadar her şeyden şüphe etmeye karar verdim." }
+    ],
+    "options2": [
+      { "label": "Peki bulabildin mi?", "reply": "Bulabildim. Her şeyden şüphe edebilirim ama şüphe ettiğimden şüphe edemem. Şüphe etmek düşünmektir, düşünüyorsam bir varlığım. Düşünüyorum, öyleyse varım." },
+      { "label": "Şüphe etmeyen var mı?", "reply": "Bulabildim. Her şeyden şüphe edebilirim ama şüphe ettiğimden şüphe edemem. Şüphe etmek düşünmektir, düşünüyorsam bir varlığım. Düşünüyorum, öyleyse varım." }
+    ],
+    "questOffer": "Duvardaki karışık kelimeleri doğru sıraya dizerek o cümleyi kur. Sonra şüphe bulmacamı çöz. Başarırsan akıl anahtarının parçasını alırsın.",
+    "afterQuest": "Akıl, kendi kendini kanıtladı. Anahtar parçası senin."
+  },
+  "nietzsche": {
+    "name": "Friedrich Nietzsche",
+    "title": "Nietzsche (5. Ev)",
+    "open": "Burası loş, çünkü gerçekler ışığa alışkın gözleri yorar. Hoş geldin, cesur olduğunu umuyorum.",
+    "options1": [
+      { "label": "Cesaret nedir?", "reply": "Cesaret, sürünün söylediğini tekrarlamak yerine kendi değerini yaratmaktır. İnsan kendini aşabilen bir varlıktır. Ben bu aşılan insana üstinsan dedim." },
+      { "label": "Neden bu kadar karanlık?", "reply": "Cesaret, sürünün söylediğini tekrarlamak yerine kendi değerini yaratmaktır. İnsan kendini aşabilen bir varlıktır. Ben bu aşılan insana üstinsan dedim." }
+    ],
+    "options2": [
+      { "label": "Tanrı öldü ne demek?", "reply": "Bunu bir nefret cümlesi sanma. Modern çağda insanların eski değerlere inancı çözüldü demek istedim. Şimdi anlamı kendimiz yaratmak zorundayız. Bu, hem korkutucu hem özgürleştirici." },
+      { "label": "Güç istenci nedir?", "reply": "Hayatın özünde büyümek, aşmak ve kendini ifade etmek istemesi vardır. Bu, başkalarını ezmek değil, kendi potansiyelini gerçekleştirmektir." }
+    ],
+    "questOffer": "Masamda üç not var. Onları doğru sırayla oku ve sözün bağlamını bul. Bulursan cesaret anahtarının parçasını alırsın.",
+    "afterQuest": "Cesaret sorgulamaktan korkmamaktır. Bu parça senin."
+  },
+  "hypatia": {
+    "name": "Hypatia",
+    "title": "Rehber Bilge Kadın (6. Ev)",
+    "open": "Ben Hypatia. İskenderiye'de matematik ve felsefe öğrettim. Bu sokakta kaybolma, sana yol göstereceğim.",
+    "hints": {
+      "0": "Henüz hiç anahtar parçan yok, Sokrates'in evinden başla.",
+      "1": "Bir parçan var, sıradaki evlere uğra.",
+      "2": "İki parça topladın, sokağın ortasındaki diğer filozoflar seni bekliyor.",
+      "3": "Üç parça tamam! Yolun yarısını geçtin, kalan iki eve uğra.",
+      "4": "Dört parça topladın, tapınağa az kaldı.",
+      "5": "Beş parçanın hepsi sende. Tapınağa git, kapı seni bekliyor."
+    }
+  },
+  "temple": {
+    "name": "Bilgelik Kitabı",
+    "locked": "Tapınağın kapısı kilitli. Beş anahtar parçasını (Bilgelik, Hakikat, Bilim, Akıl, Cesaret) topla!",
+    "unlocked": "Beş anahtar birleşti: Bilgelik, Hakikat, Bilim, Akıl ve Cesaret.",
+    "finale": "Buraya kadar geldin, çünkü sordun, merak ettin ve şüphe ettin. Felsefe cevap bulmak değil, soru sormayı bırakmamaktır. Yolculuk burada bitmez, belki yeni başlıyor. Teşekkürler gezgin."
+  }
+}
